@@ -1,10 +1,10 @@
 <?php
-    if (!empty($_REQUEST["imya"])) {
-        $greetings = "Привет, " . $_REQUEST["imya"] . "!";
-    }
-    if (!empty($_REQUEST["knopka"]) && (empty($_REQUEST["imya"]))) {
-        $error = "Пожалуйста, введите имя";
-    }
+    // if (!empty($_REQUEST["imya"])) {
+    //     $greetings = "Привет, " . $_REQUEST["imya"] . "!";
+    // }
+    // if (!empty($_REQUEST["knopka"]) && (empty($_REQUEST["imya"]))) {
+    //     $error = "Пожалуйста, введите имя";
+    // }
 ?>
 <html>
     <head>
