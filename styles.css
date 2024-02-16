@@ -1,0 +1,268 @@
+
+/* Задаём отступы для всей страницы */
+body { 
+    margin: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+}
+/* Параметры для основного поля страницы */
+.mainBox {
+    width: 1440px;
+    height: 3140px;
+    background: #ffffff;
+    /* margin-top: 0px; */
+    border: 0px solid #ff424211;
+}
+/* Параметры для бокса основного меню сверху */
+.boxMainMenu {
+    position: fixed;
+    width: 1440px;
+    height: 100px;
+    flex-shrink: 0;
+    top: 0px;
+    left: 0px;
+    border: 1px solid #000;
+    background: #004C93;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+/* Параметры для текста "Василий Калягин" */
+.textMyName {
+    color: #FFF;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    -webkit-text-stroke-width: 1;
+    -webkit-text-stroke-color: #000;
+    font-family: Inter;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-top: 35px;
+    margin-left: 165px;
+    margin-right: 300px;
+}
+/* Параметры для текста основного меню "Обо мне" */
+.textMainMenuAboutMe {
+    color: #FFF;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-decoration-line: underline;
+    margin-top: 38px;
+    margin-right: 25px;
+}
+/* Параметры для текста основного меню  */
+.textMainMenu {
+    color: #FFF;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-top: 38px;
+    margin-right: 26px;
+}
+/* Параметры для текста "Меня зовут" */
+.textMyNameIs {
+    width: 460px;
+    color: #004C93;
+    font-family: Inter;
+    font-size: 38px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+    margin-top: 200px;
+    margin-left: 165px;
+}
+/* Параметры для текста обо мне */
+.textAboutMe {
+    width: 470px; 
+    color: #004C93;
+    font-family: Inter;
+    font-size: 24px;
+    font-style: italic;
+    font-weight: 900;
+    line-height: normal;
+    margin-left: 165px;
+    margin-top: 25px;
+}
+/* Параметры для моей фотографии */
+.myImage {
+    margin-top: 150px;
+    margin-bottom: 50px;
+    margin-left: 85px; 
+}
+/* Параметры блока "Моя деятельность" */
+.myActivityBox {
+    width: 1440px;
+    height: 541px;
+    flex-shrink: 0;
+    background: #F3FBFF;
+    padding-top: 26px;
+    margin-bottom: 26px;
+}
+/* Параметры заглавного текста внутри блоков */
+.textBlockHeader {
+    color: #004C93;
+    font-family: Inter;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-left: 165px;
+}
+/* Параметры верхних миниблоков */
+.miniBoxTop {
+    width: 188px;
+    height: 289px;
+    flex-shrink: 0;
+    border-radius: 4px;
+    border: 1px solid #004C93;
+    margin-top: 26px;
+    margin-right: 28px;
+    padding-left: 12px;
+}
+/* Параметры нижних миниблоков */
+.miniBoxBottom {
+    width: 188px;
+    height: 289px;
+    flex-shrink: 0;
+    border-radius: 4px;
+    border: 1px solid #004C93;
+    margin-top: 171px;
+    margin-right: 28px;
+    padding-left: 12px;
+}
+/* Параметры для номеров миниблоков */
+.textMiniBoxTitle {
+    width: 55px;
+    height: 190px;
+    flex-shrink: 0;
+    color: #004C93;
+    font-family: Roboto;
+    font-size: 120px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 160%; /* 192px */
+}
+ /* Параметры для текста миниблоков */
+.textMiniBox {
+    width: 175px;
+    height: 120px;
+    flex-shrink: 0;
+    color: #2E4674;
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 160%; /* 25.6px */
+}
+/* Параметры текста надписей у калькулятора */
+.textCalc {
+    color: #000;
+    font-family: Roboto;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 160%; /* 22.4px */
+    margin-top: 30px;
+    margin-left: 165px;
+}
+/* поля ввода для калькулятора */
+.inputCalc {      
+    width: 550px;
+    height: 34px;
+    margin-left: 165px;
+}
+/* Кнопка вычисления для калькулятора */
+.buttonCalc {
+    display:block;
+    width: 168px;
+    height: 50px;
+    flex-shrink: 0;
+    border-radius: 5px;
+    background: #004C93;
+    margin-left: 165px;
+    margin-top: 30px;
+    margin-bottom: 30px; 
+}
+/* Текст на кнопке калькулятора */
+.buttonCalcText {
+    color: #FFF;
+    font-family: Roboto;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 160%; /* 22.4px */
+}
+/* Параметры для знаков вопроса миниблоков */
+.textMiniBoxQuestions {
+    width: 55px;
+    height: 150px;
+    flex-shrink: 0;
+    color: #004C93;
+    font-family: Roboto;
+    font-size: 120px;
+    font-style: normal;
+    font-weight: 900;
+    text-align: center;
+    margin-left: 55px; 
+}
+/* Параметры для картинки смайла */
+.smileImage {
+    margin-top: 20px;
+    margin-bottom: 50px;
+    margin-left: 415px; 
+}
+/* Фон для модального окна */
+.maskPage {
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
+}
+/* Параметры модального окна */
+.modalWindow {
+    background-color: #ffffff;
+    width: 30%;
+    margin: auto;
+    margin-top: 120px;
+    border-radius: 5px;
+    padding: 10px;
+}
+/* Параметры текста результата действий калькулятора */
+.resultCalc {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+/* Параметры кнопки "закрыть" в модальном окне вывода результата действий калькулятора */
+.resultClose {
+    text-align: right;
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+/* Параметры текста на кнопке */
+.resultClose > button {
+    background-color: #0068c9;
+    color: #ffffff;
+    border: none;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+/* Параметры реакции текста кнопки при наведении курсора */
+.resultClose > button:hover {
+    background-color: #004C93;
+    color:rgb(140, 140, 140);
+}
+/* Стиль для скрытия окошка */
+.hiddenWindow {
+    display:none;
+}
