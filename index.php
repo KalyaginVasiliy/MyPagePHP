@@ -20,16 +20,16 @@
             $calcResult= "Нет данных";
             echo $_REQUEST["numberToEnterOne"];
             if ($_REQUEST["operationSelect"]== "addition") { 
-                $calcResult = $numberOne + $numberTwo; 
+                $calcResult = (($numberOne) . (" + ") . ($numberTwo) . (" = ") . ($numberOne + $numberTwo)); 
             }
             if ($_REQUEST["operationSelect"]== "subtraction") { 
-                    $calcResult = $numberOne - $numberTwo;
+                    $calcResult = (($numberOne) . (" - ") . ($numberTwo) . (" = ") . ($numberOne - $numberTwo));
             }
             if ($_REQUEST["operationSelect"]== "multiplication") { 
-                $calcResult = $numberOne * $numberTwo;
+                $calcResult = (($numberOne) . (" * ") . ($numberTwo) . (" = ") . ($numberOne * $numberTwo));
             }
             if ($_REQUEST["operationSelect"]== "division") { 
-                $calcResult =  $numberOne / $numberTwo;
+                $calcResult =  (($numberOne) . (" / ") . ($numberTwo) . (" = ") . ($numberOne / $numberTwo));
             }
         }
         if (!empty($_REQUEST["calcResultButton"]) && (empty($_REQUEST["numberToEnterOne"])) && (empty($_REQUEST["numberToEnterTwo"]))) {
