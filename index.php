@@ -13,22 +13,22 @@
     <title>Моя страница 1</title>
     <!-- <script src="calculation.js"></script> -->
     <?php
-        
+
         if (!empty($_REQUEST["numberToEnterOne"]) && (!empty($_REQUEST["numberToEnterTwo"]))) {
-            $numberOne = $_REQUEST["numberToEnterOne"];
-            $numberTwo = $_REQUEST["numberToEnterTwo"];
+            $numberOne = intval($_REQUEST["numberToEnterOne"]);
+            $numberTwo = intval($_REQUEST["numberToEnterTwo"]);
             $calcResult= "Нет данных";
             echo $_REQUEST["numberToEnterOne"];
-            if ($_REQUEST["operationSelect"]= "addition") { 
+            if ($_REQUEST["operationSelect"]== "addition") { 
                 $calcResult = $numberOne + $numberTwo; 
             }
-            if ($_REQUEST["operationSelect"]= "subtraction") { 
+            if ($_REQUEST["operationSelect"]== "subtraction") { 
                     $calcResult = $numberOne - $numberTwo;
             }
-            if ($_REQUEST["operationSelect"]= "multiplication") { 
+            if ($_REQUEST["operationSelect"]== "multiplication") { 
                 $calcResult = $numberOne * $numberTwo;
             }
-            if ($_REQUEST["operationSelect"]= "division") { 
+            if ($_REQUEST["operationSelect"]== "division") { 
                 $calcResult =  $numberOne / $numberTwo;
             }
         }
@@ -95,7 +95,7 @@
         <!-- Размещаем блок с калькулятором -->
         <div id="calc" style="padding-top: 102px; margin-top: -102px"></div>
         <div class="textBlockHeader">Калькулятор</div>
-        <div class="textCalc">Введите первое число:</div>
+        <div class="textCalc">Введите первое число (проверка):</div>
         <form>
             <input class="inputCalc numberOneData", name="numberToEnterOne", type="number">
             <div class="textCalc">Выберите операцию:</div>
@@ -103,7 +103,7 @@
                 <option value="addition">Сложение +</option>
                 <option value="subtraction">Вычитание -</option>
                 <option value="multiplication">Умножение *</option>
-                <option value="division">Деление /</option>
+                <option value="divisionMain">Деление /</option>
             </select>
             <div class="textCalc">Введите второе число:</div>
             <input class="inputCalc numberTwoData", name="numberToEnterTwo", type="number">
