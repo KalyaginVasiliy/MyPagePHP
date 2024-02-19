@@ -103,7 +103,7 @@
                 <option value="addition">Сложение +</option>
                 <option value="subtraction">Вычитание -</option>
                 <option value="multiplication">Умножение *</option>
-                <option value="divisionMain">Деление /</option>
+                <option value="division">Деление /</option>
             </select>
             <div class="textCalc">Введите второе число:</div>
             <input class="inputCalc numberTwoData", name="numberToEnterTwo", type="number">
@@ -132,13 +132,6 @@
                 </span>
             </div>
          <?php } ?>
-        <div style="margin-left: 160px; margin-bottom: 40px; margin-top: 20px">
-            <span>
-                <?php
-                echo $_REQUEST["operationSelect"];
-                ?>
-            </span>
-        </div>   
         <!-- <button class="buttonCalc"> 
             <div class="buttonCalcText", onclick="openWindow()">
                Вычислить
