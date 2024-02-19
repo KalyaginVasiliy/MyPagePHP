@@ -13,16 +13,24 @@
     <title>Моя страница 1</title>
     <!-- <script src="calculation.js"></script> -->
     <?php
+        
         if (!empty($_REQUEST["numberToEnterOne"]) && (!empty($_REQUEST["numberToEnterTwo"]))) {
-            $numberOne= $_REQUEST["numberToEnterOne"];
-            $numberTwo= $_REQUEST["numberToEnterTwo"];
+            $numberOne = $_REQUEST["numberToEnterOne"];
+            $numberTwo = $_REQUEST["numberToEnterTwo"];
             $calcResult= "Нет данных";
             echo $_REQUEST["numberToEnterOne"];
-                // if ($_REQUEST["operationSelect.value"]= "addition") $calcResult = $numberOne . " + " . $numberTwo . " = " . $numberOne + $numberTwo;
-                // if ($_REQUEST["operationSelect.value"]= "subtraction") $calcResult = $numberOne . " - " . $numberTwo . " = " . $numberOne - $numberTwo;
-                // if ($_REQUEST["operationSelect.value"]= "multiplication") $calcResult = $numberOne . " * " . $numberTwo . " = " . $numberOne * $numberTwo;
-            // if ($_REQUEST["operationSelect.value"]= "division") $calcResult = $numberOne . " / " . $numberTwo . " = " . $numberOne / $numberTwo;
-            $calcResult= 12345;
+            if ($_REQUEST["operationSelect"]= "addition") { 
+                $calcResult = $numberOne + $numberTwo; 
+            }
+            if ($_REQUEST["operationSelect"]= "subtraction") { 
+                    $calcResult = $numberOne - $numberTwo;
+            }
+            if ($_REQUEST["operationSelect"]= "multiplication") { 
+                $calcResult = $numberOne * $numberTwo;
+            }
+            if ($_REQUEST["operationSelect"]= "division") { 
+                $calcResult =  $numberOne / $numberTwo;
+            }
         }
         if (!empty($_REQUEST["calcResultButton"]) && (empty($_REQUEST["numberToEnterOne"])) && (empty($_REQUEST["numberToEnterTwo"]))) {
             $calcError = "Пожалуйста, введите числа";
@@ -124,21 +132,11 @@
                 </span>
             </div>
          <?php } ?>
-        <div>
+        <div style="margin-left: 160px; margin-bottom: 40px; margin-top: 20px">
             <span>
-            <?php
-              echo $_REQUEST["numberToEnterOne"];
-            ?>
-            </span>
-            <span>
-            <?php
-              echo $_REQUEST["numberToEnterTwo"];          
-            ?>
-            </span>
-            <span>
-            <?php
-              echo $_REQUEST["operationSelect"];
-            ?>
+                <?php
+                echo $_REQUEST["operationSelect"];
+                ?>
             </span>
         </div>   
         <!-- <button class="buttonCalc"> 
