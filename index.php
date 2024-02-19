@@ -15,8 +15,8 @@
     <?php
 
         if (!empty($_REQUEST["numberToEnterOne"]) && (!empty($_REQUEST["numberToEnterTwo"]))) {
-            $numberOne = intval($_REQUEST["numberToEnterOne"]);
-            $numberTwo = intval($_REQUEST["numberToEnterTwo"]);
+            $numberOne = $_REQUEST["numberToEnterOne"];
+            $numberTwo = $_REQUEST["numberToEnterTwo"];
             $calcResult= "Нет данных";
             echo $_REQUEST["numberToEnterOne"];
             if ($_REQUEST["operationSelect"]== "addition") { 
