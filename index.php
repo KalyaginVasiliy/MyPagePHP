@@ -11,7 +11,23 @@
     <!-- подключаем стили -->
     <link rel="stylesheet" href="styles.css", type="text/css", rel="stylesheet">
     <title>Моя страница 1</title>
-    <script src="calculation.js"></script>
+    <!-- <script src="calculation.js"></script> -->
+    <?php
+        if (!empty($_REQUEST["numberToEnterOne"]) && (!empty($_REQUEST["numberToEnterTwo"]))) {
+            $numberOne= $_REQUEST["numberToEnterOne"];
+            $numberTwo= $_REQUEST["numberToEnterTwo"];
+            $calcResult= "Нет данных";
+            echo $_REQUEST["numberToEnterOne"];
+                // if ($_REQUEST["operationSelect.value"]= "addition") $calcResult = $numberOne . " + " . $numberTwo . " = " . $numberOne + $numberTwo;
+                // if ($_REQUEST["operationSelect.value"]= "subtraction") $calcResult = $numberOne . " - " . $numberTwo . " = " . $numberOne - $numberTwo;
+                // if ($_REQUEST["operationSelect.value"]= "multiplication") $calcResult = $numberOne . " * " . $numberTwo . " = " . $numberOne * $numberTwo;
+            // if ($_REQUEST["operationSelect.value"]= "division") $calcResult = $numberOne . " / " . $numberTwo . " = " . $numberOne / $numberTwo;
+            $calcResult= 12345;
+        }
+        if (!empty($_REQUEST["calcResultButton"]) && (empty($_REQUEST["numberToEnterOne"])) && (empty($_REQUEST["numberToEnterTwo"]))) {
+            $calcError = "Пожалуйста, введите числа";
+        }
+    ?>
 </head>
 
 <body>
@@ -72,22 +88,65 @@
         <div id="calc" style="padding-top: 102px; margin-top: -102px"></div>
         <div class="textBlockHeader">Калькулятор</div>
         <div class="textCalc">Введите первое число:</div>
-        <input class="inputCalc numberOneData", type="number">
-        <div class="textCalc">Выберите операцию:</div>
-        <select class="inputCalc calcOperation" id="operationSelect">
-            <option value="addition">Сложение +</option>
-            <option value="subtraction">Вычитание -</option>
-            <option value="multiplication">Умножение *</option>
-            <option value="division">Деление /</option>
-        </select>
-        <div class="textCalc">Введите второе число:</div>
-        <input class="inputCalc numberTwoData", type="number">
-        <button class="buttonCalc"> 
+        <form>
+            <input class="inputCalc numberOneData", name="numberToEnterOne", type="number">
+            <div class="textCalc">Выберите операцию:</div>
+            <select class="inputCalc calcOperation" name="operationSelect">
+                <option value="addition">Сложение +</option>
+                <option value="subtraction">Вычитание -</option>
+                <option value="multiplication">Умножение *</option>
+                <option value="division">Деление /</option>
+            </select>
+            <div class="textCalc">Введите второе число:</div>
+            <input class="inputCalc numberTwoData", name="numberToEnterTwo", type="number">
+            <div style="margin-left: 160px; margin-bottom: 40px; margin-top: 20px">
+                <a href="#calc">
+                    <input type = "submit" name = "calcResultButton" value="Вычислить" />
+                </a>
+            </div>
+        </form method="POST">
+        <?php if (!empty($calcError)) { ?>
+            <div style="margin-left: 160px; margin-bottom: 40px; margin-top: 20px">
+                <span>Результат: </span> 
+                <span> 
+                    <?php 
+                        echo $calcError;
+                    ?> 
+                </span>
+            </div>
+        <?php } else { ?>
+            <div style="margin-left: 160px; margin-bottom: 40px; margin-top: 20px">
+                <span>Результат: </span> 
+                <span> 
+                    <?php 
+                        echo $calcResult;
+                    ?> 
+                </span>
+            </div>
+         <?php } ?>
+        <div>
+            <span>
+            <?php
+              echo $_REQUEST["numberToEnterOne"];
+            ?>
+            </span>
+            <span>
+            <?php
+              echo $_REQUEST["numberToEnterTwo"];          
+            ?>
+            </span>
+            <span>
+            <?php
+              echo $_REQUEST["operationSelect"];
+            ?>
+            </span>
+        </div>   
+        <!-- <button class="buttonCalc"> 
             <div class="buttonCalcText", onclick="openWindow()">
                Вычислить
             </div>   
-        </button>
-        <!-- Модальное окно вывода результата действий калькулятора -->
+        </button> -->
+        <!-- Модальное окно вывода результата действий калькулятора
         <div class="maskPage hiddenWindow">
             <div class="modalWindow">
                 <h2> Результат </h2>
@@ -103,7 +162,8 @@
                 </div>
                 
             </div>
-        </div>
+        </div> -->
+
         <!-- Размещаем блок "сложности" -->
        <div id="difficulties" style="padding-top: 102px; margin-top: -102px"></div>
         <div class="myActivityBox"> 
