@@ -1,10 +1,21 @@
 <?php
+    $connectionDataBase = mysqli_connect("localhost", "root", "root", "test");
+    if (!$connectionDataBase) {
+        die ("Связь не установлена: " . mysqli_connect_error());
+    }
     if (!empty($_REQUEST["imya"])) {
         $greetings = "Привет, " . $_REQUEST["imya"] . "!";
+        mysqli_query($connectionDataBase, "INSERT INTO `users` (`name`) VALUES ('" . $_REQUEST["imya"] . "') ");
     }
     if (!empty($_REQUEST["knopka"]) && (empty($_REQUEST["imya"]))) {
         $error = "Пожалуйста, введите имя";
     }
+    $usersDataBase = [];
+    $queryDataBase = mysqli_query($connectionDataBase, "SELECT * FROM `users`");
+    while ($row = mysqli_fetch_assoc($queryDataBase)) {
+        $usersDataBase[]= $row;  
+    }
+    
 ?>
 <html>
     <head>
@@ -38,6 +49,13 @@
                 ?> 
             </span>
         </div>
+        <?php } ?>
+        <?php foreach($usersDataBase as $usersData) { ?>
+            <div>
+                <span> -> [<?php echo $usersData["id"]?>]</span> 
+                <?php echo $usersData["name"]?>
+                
+            </div>
         <?php } ?>
     </body>
 </html> 

@@ -13,28 +13,48 @@
     <title>Моя страница 1</title>
     <!-- <script src="calculation.js"></script> -->
     <?php
-
+        $connectionDataBase = mysqli_connect("localhost", "root", "root", "calcBase");
+        if (!$connectionDataBase) {
+            die ("Связь не установлена: " . mysqli_connect_error());
+        }
+        $calcResult = "";
         if (!empty($_REQUEST["numberToEnterOne"]) && (!empty($_REQUEST["numberToEnterTwo"]))) {
             $numberOne = $_REQUEST["numberToEnterOne"];
             $numberTwo = $_REQUEST["numberToEnterTwo"];
-            $calcResult= "Нет данных";
             echo $_REQUEST["numberToEnterOne"];
             if ($_REQUEST["operationSelect"]== "addition") { 
-                $calcResult = (($numberOne) . (" + ") . ($numberTwo) . (" = ") . ($numberOne + $numberTwo)); 
+                $calcResult = (($numberOne) . (" + ") . ($numberTwo) . (" = ") . ($numberOne + $numberTwo));
+                $calcResultDataBase = $numberOne + $numberTwo;
+                $calcOperation ="+"; 
             }
             if ($_REQUEST["operationSelect"]== "subtraction") { 
                     $calcResult = (($numberOne) . (" - ") . ($numberTwo) . (" = ") . ($numberOne - $numberTwo));
+                    $calcResultDataBase = $numberOne - $numberTwo;
+                    $calcOperation ="-";
             }
             if ($_REQUEST["operationSelect"]== "multiplication") { 
                 $calcResult = (($numberOne) . (" * ") . ($numberTwo) . (" = ") . ($numberOne * $numberTwo));
+                $calcResultDataBase = $numberOne * $numberTwo;
+                $calcOperation ="*";
             }
             if ($_REQUEST["operationSelect"]== "division") { 
                 $calcResult =  (($numberOne) . (" / ") . ($numberTwo) . (" = ") . ($numberOne / $numberTwo));
+                $calcResultDataBase = $numberOne / $numberTwo;
+                $calcOperation ="/";
             }
+            // mysqli_query($connectionDataBase, "INSERT INTO `Operations` (`number_one`, `operation`, `number_two`, `result`) VALUES ('" . $numberOne . "', '" . $calcOperation . "', '" . $numberTwo . "', '" . $calcResult ."');");
+            mysqli_query($connectionDataBase, "INSERT INTO `Operations` (`number_one`, `operation`, `number_two`, `result`) VALUES ('" . $numberOne . "', '" . $calcOperation . "', '" . $numberTwo . "', '" . $calcResultDataBase . "')");
         }
+
         if (!empty($_REQUEST["calcResultButton"]) && (empty($_REQUEST["numberToEnterOne"])) && (empty($_REQUEST["numberToEnterTwo"]))) {
             $calcError = "Пожалуйста, введите числа";
         }
+        $operationsDataBase = [];
+        $queryDataBase = mysqli_query($connectionDataBase, "SELECT * FROM `Operations` ORDER BY `id` DESC");
+        while ($row = mysqli_fetch_assoc($queryDataBase)) {
+            $operationDataBase[]= $row;  
+        }
+        $forBreack=0;
     ?>
 </head>
 
@@ -132,6 +152,15 @@
                 </span>
             </div>
          <?php } ?>
+         <?php foreach($operationDataBase as $usersData) { ?>
+            <div style="margin-left: 160px; margin-bottom: 5px">
+                <?php 
+                    echo $usersData["number_one"]  . $usersData["operation"] . $usersData["number_two"] . "=" . $usersData["result"];
+                    $forBreack = $forBreack+1;
+                    if ($forBreack == 7) break;
+                    ?>
+            </div>
+        <?php } ?>
         <!-- <button class="buttonCalc"> 
             <div class="buttonCalcText", onclick="openWindow()">
                Вычислить
