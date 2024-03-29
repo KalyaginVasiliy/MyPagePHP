@@ -22,7 +22,7 @@
             formDiv.appendChild(emailField); // Добавляем поле ввода в контейнер формы
 
             let nameLabel  = document.createElement("label"); // Создаем элемент label для надписи
-            nameLabel.textContent = "Имя_пользователя"; // Устанавливаем текст надписи
+            nameLabel.textContent = "Имя пользователя"; // Устанавливаем текст надписи
             nameLabel.classList.add("commentText");
             nameLabel.style.marginBottom = "10px"; // Устанавливаем отступ снизу
             formDiv.appendChild(nameLabel); // Добавляем надпись в контейнер формы
@@ -30,7 +30,6 @@
             let passwordField = document.createElement("input"); // Создаем поле ввода для пароля
             passwordField.classList.add("inputFields");
             passwordField.type = "password"; // Устанавливаем тип поля ввода как "password"
-            passwordField.placeholder = "Пароль"; // Устанавливаем placeholder для поля ввода
             formDiv.appendChild(passwordField); // Добавляем поле ввода в контейнер формы
 
             let passwordLabel  = document.createElement("label"); // Создаем элемент label для надписи

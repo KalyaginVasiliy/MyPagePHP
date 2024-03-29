@@ -31,7 +31,6 @@
 
             let emailField = document.createElement("input"); // Создаем поле ввода для email
             emailField.classList.add("inputFields");
-            emailField.placeholder = "E-mail"; // Устанавливаем placeholder для поля ввода
             formDiv.appendChild(emailField); // Добавляем поле ввода в контейнер формы
 
             let emailLabel = document.createElement("label"); // Создаем элемент label для надписи
@@ -42,7 +41,6 @@
 
             let phoneField = document.createElement("input");
             phoneField.classList.add("inputFields");
-            phoneField.placeholder = "Телефон";
             formDiv.appendChild(phoneField);
 
             let phoneLabel = document.createElement("label");
@@ -53,7 +51,6 @@
 
             let surnameField = document.createElement("input");
             surnameField.classList.add("inputFields");
-            surnameField.placeholder = "ФИО";
             formDiv.appendChild(surnameField);
 
             let surregisterLabel  = document.createElement("label");
@@ -65,7 +62,6 @@
             let passwordField = document.createElement("input");
             passwordField.classList.add("inputFields");
             passwordField.type = "password";
-            passwordField.placeholder = "Пароль";
             formDiv.appendChild(passwordField);
 
             let passwordLabel = document.createElement("label");
@@ -77,7 +73,6 @@
             let confirmPasswordField = document.createElement("input");
             confirmPasswordField.classList.add("inputFields");
             confirmPasswordField.type = "password";
-            confirmPasswordField.placeholder = "Подтверждение пароля";
             formDiv.appendChild(confirmPasswordField);
 
             let confirmPasswordLabel = document.createElement("label");
