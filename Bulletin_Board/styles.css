@@ -2,34 +2,28 @@ body {
     margin: 0;
     padding: 0;
 }
-
+:root {
+    --primary-color: #056897; 
+    --primary-textcolor: rgb(253, 252, 242);
+  }
 .header {
     height: 60px;
     line-height: 60px;
     padding-left: 20px;
     padding-right: 20px;
-    background: #0EA5E9;
-
-    color: white;
+    background: var(--primary-color);
+    color: var(--primary-textcolor);
 }
-
 .formName {
-    color:#0EA5E9;
+    color:var(--primary-color);
     font-weight: bold;
     text-align: center;
-}
-.fieldName {
-    width: 48px;
-    height: 19px;
-    top: 457px;
-    left: 200px;
-    gap: 0px;
-    opacity: 0px;
-
+    margin-top: 20px;
+    font-size: 30px;
 }
 .registerButton {
-    color: white;
-    background: #0EA5E9;
+    color: var(--primary-textcolor);
+    background: var(--primary-color);
     width: 200px;
     height: 36px;
     top: 591px;
@@ -37,7 +31,7 @@ body {
     gap: 0px;
     border: 1px 0px 0px 0px;
     opacity: 0px;
-    border: 1px solid #0EA5E9;
+    border: 1px solid var(--primary-color);;
     margin-top: 20px;
     border-radius: 5px;
     cursor: pointer;
@@ -55,9 +49,15 @@ body {
     gap: 0px;
     border: 1px 0px 0px 0px;
     opacity: 0px;
-    border: 1px solid #0EA5E9;
-    margin-top: 10px;
+    border: 1px solid var(--primary-color);;
+    margin-top: 20px;
     font-size: large;
+}
+.formDiv {
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+   
 }
 .commentText {
     width: 48px;
@@ -71,9 +71,12 @@ body {
     font-style: italic;
     font-weight: 300;
     line-height: 19.36px;
-    color: #0EA5E9;
-    margin-top: 10px;
-    text-align: center;
+    color: var(--primary-color);
+   /*  margin-top: 10px; */
     white-space: nowrap;
-
+    margin-bottom: 10px;
+}
+.commentTextDiv {
+    align-items: baseline;
+    margin-top: 10px;
 }

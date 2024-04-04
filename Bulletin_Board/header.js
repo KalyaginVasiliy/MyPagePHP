@@ -1,12 +1,8 @@
-// файл header.js
-(function (app) { // Создается анонимная функция, принимающая объект app в качестве аргумента
-    // Объект для управления заголовком
-    app.Header = { // Создается объект Header внутри объекта app
-        draw: function () { // Метод draw объекта Header
-            // Находим элемент для заголовка и добавляем текст
-            document.querySelector(".header") // Находим элемент с классом "header"
-                .append(document.createTextNode("МояОбъява.RU")) // Создаем текстовый узел и добавляем его в элемент
-            ;
-        }
-    };
-})(AdsBoard); // Вызываем анонимную функцию и передаем ей объект AdsBoard
+(function (app) { 
+    app.Header =  {
+           draw : function(){
+            document.querySelector('.header')
+                .appendChild(document.createTextNode('Из рук в руки.RU'));
+           }
+       }
+}) (AdsBoard);
