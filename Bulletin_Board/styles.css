@@ -80,3 +80,39 @@ body {
     align-items: baseline;
     margin-top: 10px;
 }
+
+.product-container {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+   }
+   
+   .image-block {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-bottom: 10px;
+   }
+   
+   .product-image {
+    max-width: 200px;
+    max-height: 200px;
+    margin-right: 10px;
+   }
+   
+   .description-block {
+    flex: 1;
+   }
+   
+   .price-block {
+    align-self: flex-end;
+    margin-bottom: 10px;
+   }
+   
+   .seller-block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+   }
