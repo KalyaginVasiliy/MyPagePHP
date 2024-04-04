@@ -104,6 +104,7 @@ body {
    
    .description-block {
     flex: 1;
+    text-align: right;
    }
    
    .price-block {
@@ -115,4 +116,9 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+   }
+   .box-product {
+    display: flex;
+    justify-content: space-between; /* Равномерно распределяем дочерние элементы по контейнеру */
+    align-items: center; /* Центрируем дочерние элементы по вертикали */
    }

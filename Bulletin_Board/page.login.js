@@ -29,7 +29,6 @@
        }
        function goToEnter(){
         document.querySelector('.content').innerHTML = '';
-        alert('Вы успешно вошли в систему');
         app.PageBulletinBoard.draw();
        }
 }) (AdsBoard);

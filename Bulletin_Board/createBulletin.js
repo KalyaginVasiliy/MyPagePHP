@@ -2,46 +2,44 @@ function drawProductContainer(imagePath, description, price, seller, phoneNumber
     // Создаем контейнер
     const container = document.createElement('div');
     container.classList.add('product-container');
+
+        const boxProduct = document.createElement('div');
+        boxProduct.classList.add('box-product');
+    
+            // Создаем блок для изображения
+            // const imageBlock = document.createElement('div');
+                //imageBlock.classList.add('image-block');
+                    const image = document.createElement('img');
+                    image.src = imagePath;
+                    image.classList.add('product-image');
+        
+            // Создаем блок для описания товара
+                const descriptionText = document.createElement('p');
+                descriptionText.textContent = description;
   
-    // Создаем блок для изображения
-    const imageBlock = document.createElement('div');
-    imageBlock.classList.add('image-block');
-    const image = document.createElement('img');
-    image.src = imagePath;
-    image.classList.add('product-image');
-    imageBlock.appendChild(image);
-  
-    // Создаем блок для описания товара
-    const descriptionBlock = document.createElement('div');
-    descriptionBlock.classList.add('description-block');
-    const descriptionText = document.createElement('p');
-    descriptionText.textContent = description;
-    descriptionBlock.appendChild(descriptionText);
-  
-    // Создаем блок для цены
-    const priceBlock = document.createElement('div');
-    priceBlock.classList.add('price-block');
-    const priceText = document.createElement('p');
-    priceText.textContent = `Цена: ${price}`;
-    priceBlock.appendChild(priceText);
+            // Создаем блок для цены
+                const priceText = document.createElement('p');
+                priceText.textContent = `Цена: ${price}`;
+
+        boxProduct.append(image, descriptionText, priceText);
   
     // Создаем блок для информации о продавце и кнопки "Показать телефон"
     const sellerBlock = document.createElement('div');
     sellerBlock.classList.add('seller-block');
-    const sellerText = document.createElement('p');
-    sellerText.textContent = `Продавец: ${seller}`;
-    const phoneButton = document.createElement('button');
-    phoneButton.textContent = 'Показать телефон';
-    phoneButton.addEventListener('click', () => {
-      phoneButton.style.display = 'none';
-      const phoneText = document.createElement('p');
-      phoneText.textContent = `Телефон: ${phoneNumber}`;
-      sellerBlock.appendChild(phoneText);
-    });
-    sellerBlock.appendChild(sellerText);
-    sellerBlock.appendChild(phoneButton);
+        const phoneButton = document.createElement('button');
+        phoneButton.textContent = 'Показать телефон';
+        phoneButton.classList.add('registerButton');
+        phoneButton.addEventListener('click', () => { 
+            phoneButton.style.display = 'none';
+            const phoneText = document.createElement('p');
+            phoneText.textContent = `Телефон: ${phoneNumber}`;
+            sellerBlock.append(phoneText, sellerText);
+        });
+        const sellerText = document.createElement('p');
+        sellerText.textContent = `Продавец: ${seller}`;
+        sellerBlock.append(phoneButton, sellerText);
   
     // Добавляем блоки в контейнер
-    container.append(imageBlock, descriptionBlock, priceBlock, sellerBlock);
+    container.append(boxProduct, sellerBlock);
     return container;
   }

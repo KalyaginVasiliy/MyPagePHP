@@ -33,7 +33,6 @@
        }
        function goToEnter(){
         document.querySelector('.content').innerHTML = '';
-        alert('Вы успешно вышли из системы');
         app.PageLogin.draw();
        }
 }) (AdsBoard);
