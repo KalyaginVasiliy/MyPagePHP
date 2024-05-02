@@ -1,11 +1,18 @@
+/* файл styles.css */
 body {
     margin: 0;
     padding: 0;
+    margin: 0 auto; 
+    max-width :  1200px; 
+    padding: 0 20px; 
+
 }
+
 :root {
-    --primary-color: #056897; 
+    --primary-color: #056897;
     --primary-textcolor: rgb(253, 252, 242);
-  }
+}
+
 .header {
     height: 60px;
     line-height: 60px;
@@ -13,14 +20,37 @@ body {
     padding-right: 20px;
     background: var(--primary-color);
     color: var(--primary-textcolor);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
+
+.menu-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.menu-item {
+    color: var(--primary-textcolor);
+    text-decoration: none;
+    margin-right: 50px;
+    cursor: pointer;
+}
+
+.menu-item:last-child {
+    margin-right: 0;
+}
+
 .formName {
-    color:var(--primary-color);
+    color: var(--primary-color);
     font-weight: bold;
     text-align: center;
     margin-top: 20px;
     font-size: 30px;
+    margin-bottom: 20px;
 }
+
 .registerButton {
     color: var(--primary-textcolor);
     background: var(--primary-color);
@@ -31,16 +61,18 @@ body {
     gap: 0px;
     border: 1px 0px 0px 0px;
     opacity: 0px;
-    border: 1px solid var(--primary-color);;
+    border: 1px solid var(--primary-color);
     margin-top: 20px;
     border-radius: 5px;
     cursor: pointer;
     transition: all 0.3s ease;
 }
+
 .registerButton:hover {
-    transform: translateY(-2px); 
-    box-shadow: 0 7px 14px rgba(0, 0, 0, 0.2); 
+    transform: translateY(-2px);
+    box-shadow: 0 7px 14px rgba(0, 0, 0, 0.2);
 }
+
 .inputFields {
     width: 400px;
     height: 48px;
@@ -49,16 +81,17 @@ body {
     gap: 0px;
     border: 1px 0px 0px 0px;
     opacity: 0px;
-    border: 1px solid var(--primary-color);;
+    border: 1px solid var(--primary-color);
     margin-top: 20px;
     font-size: large;
 }
+
 .formDiv {
-    display: flex; 
-    flex-direction: column; 
-    align-items: center; 
-   
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
+
 .commentText {
     width: 48px;
     height: 19px;
@@ -72,53 +105,124 @@ body {
     font-weight: 300;
     line-height: 19.36px;
     color: var(--primary-color);
-   /*  margin-top: 10px; */
     white-space: nowrap;
     margin-bottom: 10px;
 }
+
 .commentTextDiv {
     align-items: baseline;
     margin-top: 10px;
 }
 
 .product-container {
-    display: flex;
-    flex-direction: column;
+    display: block;
+    flex-direction: row;
     border: 1px solid #ccc;
     padding: 10px;
     border-radius: 5px;
-   }
-   
-   .image-block {
+    margin-top: 10px;
+}
+
+.image-block {
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
     margin-bottom: 10px;
-   }
-   
-   .product-image {
-    max-width: 200px;
-    max-height: 200px;
+    margin: 0 auto; /* Универсальный отступ, центрирование блоков */
+}
+
+.product-image {
+    max-width: 400px;
+    max-height: 400px;
     margin-right: 10px;
-   }
-   
-   .description-block {
+}
+
+.description-block {
     flex: 1;
     text-align: right;
-   }
-   
-   .price-block {
+}
+
+.price-block {
     align-self: flex-end;
     margin-bottom: 10px;
-   }
-   
-   .seller-block {
+}
+
+.seller-block {
     display: flex;
     justify-content: space-between;
     align-items: center;
-   }
-   .box-product {
+    flex-direction: column-reverse;
+}
+
+.box-product {
     display: flex;
-    justify-content: space-between; /* Равномерно распределяем дочерние элементы по контейнеру */
-    align-items: center; /* Центрируем дочерние элементы по вертикали */
-   }
+    justify-content: space-between;
+    align-items: center;
+   
+}
+/* Стили для menu-container */
+.menu-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 30px; /* Отступ 30px от правого края */
+}
+
+/* Стили для menu-item */
+.menu-item {
+    color: var(--primary-textcolor); /* Цвет текста соответствует цвету надписи "Из рук в руки.RU" */
+    text-decoration: none;
+    margin-right: 30px; /* Отступ между пунктами меню 30px */
+    cursor: pointer;
+    line-height: 60px; /* Выравнивание по вертикали по центру */
+}
+
+.menu-item:last-child {
+    margin-right: 0; /* Убираем отступ для последнего пункта меню */
+}
+.page-button {
+    color: var(--primary-textcolor);
+    background: var(--primary-color);
+    width: 140px;
+    height: 30px;
+    top: 591px;
+    left: 300px;
+    gap: 0px;
+    border: 1px 0px 0px 0px;
+    opacity: 0px;
+    border: 1px solid var(--primary-color);
+    margin-top: 0px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.page-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 7px 14px rgba(0, 0, 0, 0.2);
+}
+.avatar-image {
+    max-width: 400px;
+    max-height: 400px;
+    margin-right: 30px;
+}
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px; /* Отступ сверху для отделения от других элементов */
+  }
+  .product-name {
+    text-align: center; /* Центрирование текста заголовка */
+    width: 100%; /* Занимает полную ширину родительского элемента */
+}
+.text-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%; /* Занимает полную ширину родительского элемента */
+    margin: 20px; /* Универсальный отступ, центрирование блоков */
+}
+.noButton {
+    background: white;
+    border: 0px;
+}

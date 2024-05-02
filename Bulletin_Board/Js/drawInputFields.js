@@ -1,3 +1,4 @@
+// файл drawInputFields.js
 function drawInputField(inputId, inputType, labelText) {
     // Создаем элемент div для контейнера поля ввода и надписи
     const container = document.createElement('div');

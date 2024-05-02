@@ -1,4 +1,4 @@
-// utils.js
+// utils.js Вспомогательный файл для отрисовки элементов на странице
 (function(app) {
     app.Utils = {
         createInput: function(className, placeholder) {

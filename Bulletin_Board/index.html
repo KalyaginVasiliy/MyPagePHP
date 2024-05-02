@@ -1,3 +1,4 @@
+<!-- файл index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,19 +8,38 @@
     <link rel="stylesheet" href="styles.css" />
     <script>
        let AdsBoard = {};
+       let userPresence = false;
     </script>
-    <script src="header.js">    </script>
-    <script src="page.login.js"></script>
-    <script src="page.register.js"></script>
-    <script src="drawInputFields.js"></script>
-    <script src="page.bulletin.board.js"></script>
-    <script src="createBulletin.js"></script>
+    <script src="js/header.js"></script>
+    <script src="js/session.js"></script>
+    <script src="js/editUserData.js"></script>
+    <script src="js/editBulletin.js"></script>
+    <script src="js/addNewBulletin.js"></script>
+    <script src="js/PageUserAds.js"></script>
+    <script src="js/menu.js"></script>
+    <script src="js/createBulletin.js"></script>
+    <script src="js/page.login.js"></script>
+    <script src="js/editUserData.js"></script>
+    <script src="js/myProfile.js"></script>
+    <script src="js/page.register.js"></script>
+    <script src="js/drawInputFields.js"></script>
+    <script src="js/page.bulletin.board.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            AdsBoard.Header.draw();
-            AdsBoard.PageLogin.draw();
-        });
-        
+        const xhr = new XMLHttpRequest();
+        xhr.open('GET', 'session.php?action=check', false); // Синхронный запрос
+        xhr.send();
+        const sessionExists = xhr.responseText === 'true';
+        if (sessionExists) {
+            userPresence = true;
+        } 
+        AdsBoard.Header.draw();
+        if (sessionExists) {
+            AdsBoard.PageProfile.draw();
+        } else {
+            AdsBoard.PageBulletinBoard.draw();
+        }
+    });
     </script>
 </head>
 <body>
